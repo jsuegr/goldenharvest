@@ -70,6 +70,7 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 	$total_factura=$subtotal+$total_iva;
 	$update=mysqli_query($con,"update facturas set total_venta='$total_factura' where id_factura='$id_factura'");
 ?>
+
 <tr>
 	<td class='text-right' colspan=4>SUBTOTAL <?php echo $simbolo_moneda;?></td>
 	<td class='text-right'><?php echo number_format($subtotal,2);?></td>

@@ -67,7 +67,7 @@
 			include("modal/registro_clientes.php");
 			include("modal/registro_productos.php");
 		?>
-			<form class="form-horizontal" role="form" id="datos_factura">
+			<form class="form-horizontal" role="form" id="datos_factura" action="ajax/editar_factura.php" method="POST" >
 				<div class="form-group row">
 				  <label for="nombre_cliente" class="col-md-1 control-label">Cliente</label>
 				  <div class="col-md-3">
@@ -104,6 +104,7 @@
 									?>
 								</select>
 							</div>
+							
 							<label for="tel2" class="col-md-1 control-label">Fecha</label>
 							<div class="col-md-2">
 								<input type="text" class="form-control input-sm" id="fecha" value="<?php echo $fecha_factura;?>" readonly>
@@ -123,7 +124,17 @@
 									<option value="2" <?php if ($estado_factura==2){echo "selected";}?>>Pendiente</option>
 								</select>
 							</div>
+							<?php 
+								$sql_vendedor=mysqli_query($con,"select * from facturas WHERE id_factura=".$_GET["id_factura"]);
+								$rw=mysqli_fetch_array($sql_vendedor);
+							?>
+							<div class="col-md-12" style="margin-top: 20px;">
+								<label for="descripcion_factura">Descripción del producto</label>
+								<textarea class="form-control" name="descripcion_factura" id="descripcion_factura" cols="30" rows="5" placeholder="Descripción del producto"><?php echo $rw["descripcion_factura"]; ?></textarea>
+								
+							</div>
 						</div>
+
 				
 				
 				<div class="col-md-12">

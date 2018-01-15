@@ -1,7 +1,9 @@
 <?php
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	$id_factura= $_SESSION['id_factura'];
+	$descripcion_factura="";
 	/*Inicia validacion del lado del servidor*/
+	if (!isset($_POST['precio_venta'])){$descripcion_factura=$_POST["descripcion_factura"];}
 	if (empty($_POST['id_cliente'])) {
            $errors[] = "ID vacío";
         }else if (empty($_POST['id_vendedor'])) {
@@ -26,7 +28,7 @@
 
 		$estado_factura=intval($_POST['estado_factura']);
 		
-		$sql="UPDATE facturas SET id_cliente='".$id_cliente."', id_vendedor='".$id_vendedor."', condiciones='".$condiciones."', estado_factura='".$estado_factura."' WHERE id_factura='".$id_factura."'";
+		$sql="UPDATE facturas SET id_cliente='".$id_cliente."', id_vendedor='".$id_vendedor."', condiciones='".$condiciones."', estado_factura='".$estado_factura."', descripcion_factura='".$descripcion_factura."'  WHERE id_factura='".$id_factura."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Factura ha sido actualizada satisfactoriamente.";
