@@ -1,0 +1,36 @@
+
+
+<?php
+/*Datos de conexion a la base de datos*/
+define('DB_HOST', 'localhost');//DB_HOST:  generalmente suele ser "127.0.0.1"
+define('DB_USER', 'root');    //Usuario de tu base de datos
+define('DB_PASS', '');        //Contraseña del usuario de la base de datos
+define('DB_NAME', 'u161645819_golde');  //Nombre de la base de datos   simple_invoice
+?>
+
+
+
+<?php
+/*Datos de conexion a la base de datos*/
+define('DB_HOST', 'mysql.hostinger.mx');    //DB_HOST:  generalmente suele ser "127.0.0.1"  
+define('DB_USER', 'u161645819_golde');     //Usuario de tu base de datos     
+define('DB_PASS', 'SJEjPtJ7OhJl');       //Contraseña del usuario de la base de datos   
+define('DB_NAME', 'u161645819_golde');  //Nombre de la base de datos   simple_invoice
+?>
+
+
+
+
+
+
+
+
+
+
+
+Usuario: trujillo
+Contraseña: trujillo08
+
+
+Usuario: norma
+Contraseña: norma1
